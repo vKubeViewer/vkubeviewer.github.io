@@ -6,11 +6,7 @@
     <description>Recent content in vKubeViewer Docs on vKubeViewer Guide</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate>
-    
-	<atom:link href="vkubeviewer.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="vkubeviewer.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Start Guide</title>
       <link>vkubeviewer.github.io/docs/start-guide/</link>
