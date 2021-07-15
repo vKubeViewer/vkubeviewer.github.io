@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vKubeViewer Docs on vKubeViewer Guide</title>
-    <link>vkubeviewer.github.io/</link>
+    <link>/</link>
     <description>Recent content in vKubeViewer Docs on vKubeViewer Guide</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="vkubeviewer.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Start Guide</title>
-      <link>vkubeviewer.github.io/docs/start-guide/</link>
+      <link>/docs/start-guide/</link>
       <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
       
-      <guid>vkubeviewer.github.io/docs/start-guide/</guid>
+      <guid>/docs/start-guide/</guid>
       <description>A guide to quickly use the vkubeviewer operator. Step 1 : Install the necessary software dependencies:
  A git client/command line Go (v1.15+) Docker Desktop Kubebuilder Kustomize Access to a Container Image Repository (docker.io, quay.io, harbor) Make binary → sudo apt install make  Step 2 : Get the vKubeViewer operator to your desktop
 git clone https://github.com/vKubeViewer/vkubeviewer.git cd vkubeviewer Step 3: Run the below script to get required go and govmomi packages</description>
@@ -20,37 +20,37 @@ git clone https://github.com/vKubeViewer/vkubeviewer.git cd vkubeviewer Step 3: 
     
     <item>
       <title>Developer Guide</title>
-      <link>vkubeviewer.github.io/docs/developer-guide/</link>
+      <link>/docs/developer-guide/</link>
       <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
       
-      <guid>vkubeviewer.github.io/docs/developer-guide/</guid>
+      <guid>/docs/developer-guide/</guid>
       <description>coming soon</description>
     </item>
     
     <item>
       <title>Configuration</title>
-      <link>vkubeviewer.github.io/docs/configure/</link>
+      <link>/docs/configure/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
       
-      <guid>vkubeviewer.github.io/docs/configure/</guid>
+      <guid>/docs/configure/</guid>
       <description>xxxx`.</description>
     </item>
     
     <item>
       <title>CRD Description</title>
-      <link>vkubeviewer.github.io/docs/crd-description/</link>
+      <link>/docs/crd-description/</link>
       <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
       
-      <guid>vkubeviewer.github.io/docs/crd-description/</guid>
+      <guid>/docs/crd-description/</guid>
       <description>coming soon</description>
     </item>
     
     <item>
       <title>Reference</title>
-      <link>vkubeviewer.github.io/docs/reference/</link>
+      <link>/docs/reference/</link>
       <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
       
-      <guid>vkubeviewer.github.io/docs/reference/</guid>
+      <guid>/docs/reference/</guid>
       <description>coming soon</description>
     </item>
     
