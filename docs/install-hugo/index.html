@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Quickstart - vKubeViewer Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="vkubeviewer.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/vkubeviewer.github.io/css/style.min.d0149e46d37ed09a60f55899204505f757aeb152bb817cdb02a1a2bf5728bb6b.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="vkubeviewer.github.io/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="vkubeviewer.github.io/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="vkubeviewer.github.io"><img alt="Logo" src="/vkubeviewer.github.io/images/logo.svg" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="vkubeviewer.github.io"><img alt="Logo" src="/vkubeviewer.github.io/images/logo-mobile.svg" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="vkubeviewer.github.io/">
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-docs">
+      <a href="vkubeviewer.github.io/docs/">
+        <span>Docs</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Docs</h4>
+  <ul>
+    
+    <li class="active ">
+      <a href="vkubeviewer.github.io/docs/install-hugo/">Quickstart</a>
+    </li>
+    
+    <li class="">
+      <a href="vkubeviewer.github.io/docs/install-theme/">Install Theme</a>
+    </li>
+    
+    <li class="">
+      <a href="vkubeviewer.github.io/docs/configure/">Configuration</a>
+    </li>
+    
+    <li class="">
+      <a href="vkubeviewer.github.io/docs/specimen/">Specimen</a>
+    </li>
+    
+    <li class="">
+      <a href="vkubeviewer.github.io/docs/example/">Hugo Whisper</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Quickstart</h1>
+<div class="content ">
+  <h2 id="a-guide-to-quickly-use-the-vkubeviewer-operator">A guide to quickly use the vkubeviewer operator.</h2>
+<p><strong>Step 1 :</strong> Install the necessary software dependencies:</p>
+<ul>
+<li>A <strong>git</strong> client/command line</li>
+<li><a href="https://golang.org/dl/">Go (v1.15+)</a></li>
+<li><a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a></li>
+<li><a href="https://go.kubebuilder.io/quick-start.html">Kubebuilder</a></li>
+<li><a href="https://kubernetes-sigs.github.io/kustomize/installation/">Kustomize</a></li>
+<li>Access to a Container Image Repository (docker.io, quay.io, harbor)</li>
+<li>Make binary  → <code>sudo apt install make</code></li>
+</ul>
+<p><strong>Step 2 :</strong> Get the <strong>vKubeViewer</strong> operator to your desktop</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone https://github.com/vKubeViewer/vkubeviewer.git
+cd vkubeviewer
+</code></pre></div><p><strong>Step 3:</strong> Run the below script to get required go and govmomi packages</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">chmod +x ./go-pack.sh
+./go-pack.sh
+</code></pre></div><p>You can check the currently installed CRDs on your K8s cluster by :</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get crd
+</code></pre></div><p><strong>Step 4:</strong>  Install the CRDs from this operator.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">make install
+</code></pre></div><p><strong>Step 5:</strong>  Check your newly installed CRDs.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get crd
+</code></pre></div><p><strong>Step 6:</strong> <strong>Edit</strong> the CR sample yaml in <em>config/samples</em> folder, choose the one you want to view. For instance to view VM information, edit the spec field and put your VM name in <strong>nodename</strong>  field in <em><strong>config/samples/topology_v1_nodeinfo.yaml</strong></em> as shown below:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd config/samples
+cat topology_v1_nodeinfo.yaml
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">apiVersion: topology.vkubeviewer.com/v1
+kind: NodeInfo
+metadata:
+name: k8s-worker-1
+spec:
+# Add fields here or edit
+nodename: k8s-worker-01
+</code></pre></div><p><strong>Step 7:</strong> <strong>Apply</strong> the above YAML to create your custom resource</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl apply -f topology_v1_nodeinfo.yaml
+</code></pre></div><p><strong>Step 8:</strong> <strong>Query</strong> the CR we just created, check if the <strong>nodename</strong> field is also printed.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get nodeinfo
+
+NAME           NODENAME
+k8s-worker-1   k8s-worker-01
+</code></pre></div><p>**Step 9:**To build the manager code locally, you can run the following make command:</p>
+<p><strong>Note:</strong> Skip to step 11 if you want to build the manager on a pod using a publicly accessible image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd ../..
+make build
+</code></pre></div><p>This should have build the manager binary in bin/manager. Before running the manager in standalone code, we need to set three environmental variables to allow us to connect to the vCenter Server. They are:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">export GOVMOMI_URL=Your_Vcenter_URL
+export GOVMOMI_USERNAME=Your_Username@vsphere.local
+export GOVMOMI_PASSWORD=Your_VC_Password
+</code></pre></div><p><strong>Step 10:</strong> The manager can now be started in standalone mode, run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">bin/manager
+</code></pre></div><p>The output should look like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">2021-06-30T16:35:05.649+0100	INFO	controller-runtime.metrics	metrics server is starting to listen	{&#34;addr&#34;: &#34;:8080&#34;}
+2021-06-30T16:35:05.650+0100	INFO	setup	starting manager
+2021-06-30T16:35:05.650+0100	INFO	controller-runtime.manager.controller.fcdinfo	Starting EventSource	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;FCDInfo&#34;, &#34;source&#34;: &#34;kind source: /, Kind=&#34;}
+2021-06-30T16:35:05.650+0100	INFO	controller-runtime.manager.controller.nodeinfo	Starting EventSource	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;NodeInfo&#34;, &#34;source&#34;: &#34;kind source: /, Kind=&#34;}
+2021-06-30T16:35:05.650+0100	INFO	controller-runtime.manager.controller.hostinfo	Starting EventSource	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;HostInfo&#34;, &#34;source&#34;: &#34;kind source: /, Kind=&#34;}
+2021-06-30T16:35:05.650+0100	INFO	controller-runtime.manager	starting metrics server	{&#34;path&#34;: &#34;/metrics&#34;}
+2021-06-30T16:35:05.751+0100	INFO	controller-runtime.manager.controller.hostinfo	Starting Controller	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;HostInfo&#34;}
+2021-06-30T16:35:05.751+0100	INFO	controller-runtime.manager.controller.nodeinfo	Starting Controller	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;NodeInfo&#34;}
+2021-06-30T16:35:05.751+0100	INFO	controller-runtime.manager.controller.nodeinfo	Starting workers	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;NodeInfo&#34;, &#34;worker count&#34;: 1}
+2021-06-30T16:35:05.751+0100	INFO	controller-runtime.manager.controller.hostinfo	Starting workers	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;HostInfo&#34;, &#34;worker count&#34;: 1}
+2021-06-30T16:35:05.751+0100	INFO	controller-runtime.manager.controller.fcdinfo	Starting Controller	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;FCDInfo&#34;}
+2021-06-30T16:35:05.752+0100	INFO	controller-runtime.manager.controller.fcdinfo	Starting workers	{&#34;reconciler group&#34;: &#34;[topology.vkubeviewer.com](http://topology.vkubeviewer.com/)&#34;, &#34;reconciler kind&#34;: &#34;FCDInfo&#34;, &#34;worker count&#34;: 1}
+2021-06-30T16:35:05.752+0100	INFO	controllers.NodeInfo	received reconcile request for &#34;k8s-worker-1&#34; (namespace: &#34;default&#34;)	{&#34;NodeInfo&#34;: &#34;default/k8s-worker-1&#34;}
+2021-06-30T16:35:05.811+0100	INFO	controllers.NodeInfo	received reconcile request for &#34;k8s-worker-1&#34; (namespace: &#34;default&#34;)	{&#34;NodeInfo&#34;: &#34;default/k8s-worker-1&#34;}
+</code></pre></div><p>You can apply more CRDs from the samples folder for other resources.</p>
+<p><strong>Step 11</strong> : We can run the below command to see the required fields in the status field of the CRD.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get nodeinfo -o yaml
+</code></pre></div><p>Output:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">apiVersion: [topology.vkubeviewer.com/v1](http://topology.vkubeviewer.com/v1)
+kind: NodeInfo
+metadata:
+annotations:
+[kubectl.kubernetes.io/last-applied-configuration:](http://kubectl.kubernetes.io/last-applied-configuration:) |
+{&#34;apiVersion&#34;:&#34;[topology.vkubeviewer.com/v1&#34;,&#34;kind&#34;:&#34;NodeInfo&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;name&#34;:&#34;k8s-worker-1&#34;,&#34;namespace&#34;:&#34;default&#34;},&#34;spec&#34;:{&#34;nodename&#34;:&#34;k8s-worker-01](http://topology.vkubeviewer.com/v1%22,%22kind%22:%22NodeInfo%22,%22metadata%22:%7B%22annotations%22:%7B%7D,%22name%22:%22k8s-worker-1%22,%22namespace%22:%22default%22%7D,%22spec%22:%7B%22nodename%22:%22k8s-worker-01)&#34;}}
+creationTimestamp: &#34;2021-06-30T15:34:22Z&#34;
+generation: 1
+name: k8s-worker-1
+namespace: default
+resourceVersion: &#34;16371295&#34;
+uid: ac38c909-81a5-4e16-a6b1-d6efa4602136
+spec:
+nodename: k8s-worker-01
+**status:
+guestId: ubuntu64Guest
+hwVersion: vmx-18
+ipAddress: 10.27.51.54
+pathToVM: &#39;[vsan-OCTO-Cluster-A] 14fe8760-f3fc-92ac-297b-246e962f4854/K8s-Worker-01.vmx&#39;
+powerState: poweredOn
+resvdCPU: 0
+resvdMem: 0
+totalCPU: 4
+totalMem: 4096**
+kind: List
+metadata:
+resourceVersion: &#34;&#34;
+selfLink: &#34;&#34;
+</code></pre></div><h2 id="running-the-controller-manager-on-a-pod-in-your-k8s-cluster">Running the controller-manager on a pod in your K8s cluster</h2>
+<p><strong>Step 12:</strong> Login into <a href="http://docker.io">Docker.io</a> as you will need to get the controller image stored in vkubeviewer repository.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">docker login —username dockerID —password &#39;My_password&#39;
+</code></pre></div><p>Set the environment variable IMG to point at the required image.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">export IMG=docker.io/vkubeviewer/controller-manager:latest
+</code></pre></div><p><strong>Step 13:</strong> Create the <strong>namespace</strong> and <strong>secret</strong> used by the controller pod.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl create ns vkubeviewer-system
+</code></pre></div><p><strong>Note:</strong> Do not forget to change the credentials wit your GOVMOMI credentials</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl create secret generic vc-creds-1 \
+--from-literal=&#39;GOVMOMI_USERNAME= **Username**&#39; \
+--from-literal=&#39;GOVMOMI_PASSWORD=**Password**&#39; \
+--from-literal=&#39;GOVMOMI_URL=192.168.0.100&#39; \
+-n vkubeviewer-system
+[output]secret/vc-creds-1 created
+</code></pre></div><p><strong>Step14:</strong> Create the deployment with 1 replica set which ensures that the controller pod keeps running. run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">make deploy
+</code></pre></div><p><strong>Step 15:</strong> Check the pod is running fine with both the containers in ready and running state.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get pods -n vkubeviewer-system
+
+NAME                                          READY   STATUS    RESTARTS   AGE
+vkubeviewer-controller-manager-566c6fffdb-fxjr2   2/2     Running   0          2m39s
+</code></pre></div><p><strong>Step 16:</strong> Re-apply the sample YAMLs for the custom resources to be monitored by the above pod.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kustomize build config/samples | kubectl create -f -
+</code></pre></div><p><strong>Step 17:</strong> Finally, we can run the below command to see the required fields in the status field of the CRDs.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kubectl get hostinfo -o yaml
+kubectl get nodeinfo -o yaml
+kubectl get fcdinfo -o yaml
+</code></pre></div><p>Output of fcdinfo :</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">apiVersion: v1
+items:
+- apiVersion: topology.vkubeviewer.com/v1
+  kind: FCDInfo
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {&#34;apiVersion&#34;:&#34;topology.vkubeviewer.com/v1&#34;,&#34;kind&#34;:&#34;FCDInfo&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{},&#34;name&#34;:&#34;fcdinfo-sample&#34;,&#34;namespace&#34;:&#34;default&#34;},&#34;spec&#34;:{&#34;pvId&#34;:&#34;pvc-b8458bef-178e-40dd-9bc0-2a05f1ddfd65&#34;}}
+    creationTimestamp: &#34;2021-07-01T16:02:22Z&#34;
+    generation: 1
+    name: fcdinfo-sample
+    namespace: default
+    resourceVersion: &#34;16637703&#34;
+    uid: 03439716-ccc4-41ae-9559-fd19c96ef362
+  spec:
+    pvId: pvc-b8458bef-178e-40dd-9bc0-2a05f1ddfd65
+  **status:
+    filePath: &#39;[vsan-OCTO-Cluster-B] b2d46d60-cd6e-6724-576b-246e962f4ab4/12a23b18541b4a28965cf4af1e963578.vmdk&#39;
+    provisioningType: thin
+    sizeMB: 5120**
+kind: List
+metadata:
+  resourceVersion: &#34;&#34;
+  selfLink: &#34;&#34;
+</code></pre></div><h3 id="step-18-clean-up">Step 18: Clean Up.</h3>
+<p>Remove the CRDs</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">kustomize build config/samples | kubectl delete -f -
+make uninstall
+</code></pre></div><p>Remove the deployment and related namespace and secret</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">make undeploy
+</code></pre></div><h3 id="if-you-face-any-problems-please-open-a-new-issue-in-the-issues-tab-for-us-to-review">If you face any problems, please open a new issue in the Issues tab for us to review.</h3>
+<h2 id="thank-you">Thank you.</h2>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          <ul>
+            <li class="homepage"><a href="https://github.com/vKubeViewer">Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vkubeviewer.github.io/js/scripts.min.1237ff71925bb8625c97a9af8db4c54525258bedfd7c47493daaff723bea755e.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>
